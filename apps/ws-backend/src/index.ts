@@ -1,5 +1,5 @@
 import { WebSocket, WebSocketServer } from 'ws';
-import jwt, { JwtPayload } from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 import { JWT_SECRET } from '@repo/backend-common/config';
 import { prismaClient } from "@repo/db/client";
 
@@ -29,7 +29,6 @@ function checkUser(token: string): string | null {
   } catch(e) {
     return null;
   }
-  return null;
 }
 
 wss.on('connection', function connection(ws, request) {
